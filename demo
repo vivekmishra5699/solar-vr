@@ -1,0 +1,56 @@
+let currentPlanetIndex = 0;
+let orbitingPlanet = false;
+let orbitStartTime = 0;
+let orbitDuration = 8000;
+
+function animate(time, xrFrame) {
+    if (!orbitingPlanet) {
+        const planet = planets[currentPlanetIndex];
+        const orbitTime = Date.now() - orbitStartTime;
+        const angle = (orbitTime / orbitDuration) * Math.PI * 2;
+        cameraRig.position.x = planet.position.x + Math.cos(angle) * 30;
+        cameraRig.position.z = planet.position.z + Math.sin(angle) * 30;
+        cameraRig.position.y = 5; // Ensure camera Y position stays at 5 during orbit
+        cameraRig.lookAt(planet.position);
+
+        if (orbitTime > orbitDuration) {
+            orbitingPlanet = true;
+            orbitStartTime = Date.now();
+        }
+    } else {
+        const planet = planets[currentPlanetIndex];
+        const orbitTime = Date.now() - orbitStartTime;
+        const angle = (orbitTime / orbitDuration) * Math.PI * 2;
+        cameraRig.position.x = planet.position.x + Math.cos(angle) * 30;
+        cameraRig.position.z = planet.position.z + Math.sin(angle) * 30;
+        cameraRig.position.y = 5; // Ensure camera Y position stays at 5 during orbit
+
+        if (orbitTime > orbitDuration) {
+            orbitingPlanet = false;
+            currentPlanetIndex = (currentPlanetIndex + 1) % planets.length;
+            if (currentPlanetIndex === 0) {
+                // Completed one orbit around all planets
+                // Reset to initial state (far from the Sun)
+                currentPlanetIndex = 0;
+                orbitStartTime = Date.now();
+            } else {
+                // Start orbiting the next planet
+                orbitStartTime = Date.now();
+                orbitingPlanet = false;
+            }
+        }
+    }
+
+    sun.rotation.y += 0.005;
+
+    if (xrFrame) {
+        const referenceSpace = renderer.xr.getReferenceSpace();
+        const session = renderer.xr.getSession();
+        const viewerPose = xrFrame.getViewerPose(referenceSpace);
+        if (viewerPose) {
+            const position = viewerPose.transform.position;
+        }
+    }
+
+    renderer.render(scene, camera);
+}

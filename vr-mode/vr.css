@@ -1,0 +1,91 @@
+.demo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 235vh;
+    height: 105vh;
+    background-image: conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));
+    opacity: 1;
+    z-index: 9999; /* Adjust the z-index to bring it to the front */
+    /* Add any other styling properties you want */
+}
+#vr-button {
+    position: absolute;
+    background-image: url('vr.png') !important;
+    background-size: 50% 100% !important; /* Adjust as needed */
+    background-repeat: no-repeat !important;
+    background-position: center !important; /* Adjust as needed */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    bottom: 8px !important; /* Adjust top position as needed */
+    left: 45% !important; /* Adjust right position as needed */
+    width: 8em !important;
+    color: transparent !important;
+
+    font-weight: bolder !important;
+    height: 2.8em !important;
+    font-size: 1.5em !important;
+    z-index: 10000 !important; /* Higher z-index value to ensure it's above the .demo div */
+    /* Add any other styling properties you want */
+    border: none !important;
+    /* Reduce the opacity of the background image */
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the last value (0.5) to change opacity */
+}
+#vr-button:hover{
+    color: rgb(255, 255, 255) !important;
+    
+}
+h1{
+    font-size: 70px;
+    margin-left: 40%;
+}
+p{
+    font-size: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.rotate-phone {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 54px;
+    text-align: center;
+    color: white;
+}
+
+@media (orientation: portrait) {
+    .demo {
+        display: none; /* Hide the .demo div in portrait mode */
+    }
+    .rotate-phone {
+        display: block; /* Display the rotate phone message */
+    }
+    #vr-button {
+        display: none; /* Hide the VR button in portrait mode */
+    }
+}
+@media screen and (max-width: 940px) {
+    .demo {
+        width: 110%;
+        height: 110%;
+        font-size: 80px;
+    
+    }
+    #vr-button{
+        opacity: 0;
+        bottom: 8px !important;
+        left: 45% !important;
+        height: 3em !important;
+        font-size: 1em !important;
+    }
+    h1{
+        font-size: 50px;
+        margin-left: 40%;
+    }
+    p{
+        font-size: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
