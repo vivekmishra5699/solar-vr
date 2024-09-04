@@ -1,0 +1,26 @@
+{
+  "name": "newproject",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/three": "^0.164.0",
+    "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "ammo.js": "^0.0.10",
+    "ammojs": "^0.0.2",
+    "cannon-es": "^0.20.0",
+    "install": "^0.13.0",
+    "npm": "^10.4.0",
+    "three": "^0.161.0",
+    "three-vive-controller": "^1.4.1",
+    "three-vrcontroller-module": "^1.0.5",
+    "tween.js": "^16.6.0"
+  }
+}

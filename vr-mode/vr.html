@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="vr.css">
+</head>
+
+<body>
+<div class="demo">
+<h1>Ceres...!</h1>
+<p>Explore the solar system . With Ceres, you can navigate through a stunning 3D space environment featuring all the planets . Start exploring space from your phone or computer.</p>
+</div>
+<canvas id="bg"></canvas>
+<div class="rotate-phone">
+    <p>Please rotate your device to landscape mode</p>
+</div>
+<script>
+    window.addEventListener('orientationchange', function() {
+        // Reload the page
+        window.location.reload();
+    });
+</script>
+<script src='vr.js' type="module" id="script"></script>
+
+</body>
+</html>
