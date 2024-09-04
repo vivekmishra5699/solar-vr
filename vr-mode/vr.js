@@ -28,7 +28,7 @@ const ambientLight = new THREE.AmbientLight(0x757575, 1);
 scene.add(ambientLight);
 
 const textureLoader = new THREE.TextureLoader();
-const spaceTexture = textureLoader.load('/textures/galaxy.webp');
+const spaceTexture = textureLoader.load('/solar-vr/textures/galaxy.webp');
 // Create a large sphere for the background
 const backgroundGeometry = new THREE.SphereGeometry(3000, 164, 164);
 const backgroundMaterial = new THREE.MeshBasicMaterial({
@@ -44,50 +44,49 @@ scene.add(backgroundMesh);
 
 const textures = {
     sun: {
-        colorMap: textureLoader.load('/textures/sun/8k_sun.jpg'),
-        normalMap: textureLoader.load('/textures/planet/mercury/Normal.jpg'),
-        specularMap: textureLoader.load('/textures/sun/sun_detailed.jpg'),
-        displacementMap: textureLoader.load('/textures/sun/sun-alpha-2k.jpg')
+        colorMap: textureLoader.load('/solar-vr/textures/sun/8k_sun.jpg'),
+        normalMap: textureLoader.load('/solar-vr/texture/planet/mercury/Normal.jpg'),
+        specularMap: textureLoader.load('/solar-vr/texture/sun/sun_detailed.jpg'),
+        displacementMap: textureLoader.load('/solar-vr/textures/sun/sun-alpha-2k.jpg')
     },
     mercury: {
-        colorMap: textureLoader.load('/textures/planets/mercury/Mercury_Bump.jpg'),
-        normalMap: textureLoader.load('/textures/planets/mercury/Normal.jpg'),
+        colorMap: textureLoader.load('/solar-vr/textures/planets/mercury/Mercury_Bump.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets/mercury/Normal.jpg'),
        
     },
     venus: {
-        colorMap: textureLoader.load('/textures/planets/venus/venus.jpg'),
+        colorMap: textureLoader.load('/solar-vr/textures/planets/venus/venus.jpg'),
     },
     earth: {
-        colorMap: textureLoader.load('/textures/planets/earth/earth.jpg'),//4096 for more clear view
-        normalMap: textureLoader.load('/textures/planets/earth/earth_normal.jpg'),
-        specularMap: textureLoader.load('/textures/planets/earth/earth_specular.jpg'),
-        displacementMap: textureLoader.load('/textures/planets/earth/earthbump (2).jpg')
+        colorMap: textureLoader.load('/solar-vr/textures/planets/earth/earth.jpg'),//4096 for more clear view
+        normalMap: textureLoader.load('/solar-vr/textures/planets/earth/earth_normal.jpg'),
+        specularMap: textureLoader.load('/solar-vr/textures/planets/earth/earth_specular.jpg'),
+        displacementMap: textureLoader.load('/solar-vr/textures/planets/earth/earthbump (2).jpg')
     },
     mars: {
-        colorMap: textureLoader.load('/textures/planets/mars/mars.jpg'),
-        normalMap: textureLoader.load('/textures/planets/mars/Mars_Normal.jpg'),
+        colorMap: textureLoader.load('/solar-vr/textures/planets/mars/mars.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets/mars/Mars_Normal.jpg'),
     },
     jupiter: {
-        colorMap: textureLoader.load('/textures/planets/jupiter/Jupiter_Map.jpg'),
-        normalMap: textureLoader.load('/textures/planets/jupiter/Jupiter_Normal.jpg'),
+        colorMap: textureLoader.load('/solar-vr/textures/planets/jupiter/Jupiter_Map.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets/jupiter/Jupiter_Normal.jpg'),
     },
     saturn: {
-        colorMap: textureLoader.load('/textures/planets/saturn/Saturn_Map.jpg'),
-        normalMap: textureLoader.load('/textures/planets/saturn/Saturn_Normal.jpg')
+        colorMap: textureLoader.load('/solar-vr/textures/planets/saturn/Saturn_Map.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets/saturn/Saturn_Normal.jpg')
     },
     saturnRings: {
-        colorMap: textureLoader.load('/textures/planets/saturn/ring.jpeg'),
-        alphaMap: textureLoader.load('/textures/planets/saturn/saturn_ring.png')
+        colorMap: textureLoader.load('/solar-vr/textures/planets/saturn/ring.jpeg'),
+        alphaMap: textureLoader.load('/solar-vr/textures/planets/saturn/saturn_ring.png')
     },
     uranus: {
-        colorMap: textureLoader.load('/textures/planets/uranus/Uranus-0.jpg'),
-        normalMap: textureLoader.load('/textures/planets/uranus/Uranus_Normal.jpg')
+        colorMap: textureLoader.load('/solar-vr/textures/planets/uranus/Uranus-0.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets/uranus/Uranus_Normal.jpg')
     },
     neptune:{
-        colorMap: textureLoader.load('/textures/planets/neptune/Neptune.jpg'),
-        normalMap: textureLoader.load('/textures/planets//neptune/Neptune_Normal.jpg')
+        colorMap: textureLoader.load('/solar-vr/textures/planets/neptune/Neptune.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planets//neptune/Neptune_Normal.jpg')
     }
-    // Add other planets similarly...
 };
 
 
@@ -352,7 +351,7 @@ function addStars() {
     geometry.computeBoundingSphere();
 
     const textureLoader = new THREE.TextureLoader();
-    const starTexture = textureLoader.load('/textures/planets/star.png'); // Make sure to replace with the correct path to your star texture
+    const starTexture = textureLoader.load('/solar-vr/textures/planets/star.png'); // Make sure to replace with the correct path to your star texture
 
     const material = new THREE.PointsMaterial({
         size: 3,
