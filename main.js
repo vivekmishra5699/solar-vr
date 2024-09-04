@@ -58,7 +58,7 @@ scene.add(backgroundMesh);
 const textures = {
     sun: {
         colorMap: textureLoader.load('textures/sun/8k_sun.jpg'),
-        normalMap: textureLoader.load('textures/planet/mercury/Normal.jpg'),
+        normalMap: textureLoader.load('textures/planets/mercury/Normal.jpg'),
         specularMap: textureLoader.load('textures/sun/sun_detailed.jpg'),
         displacementMap: textureLoader.load('textures/sun/sun-alpha-2k.jpg')
     },
@@ -73,7 +73,7 @@ const textures = {
         colorMap: textureLoader.load('textures/planets/earth/earth.jpg'),
         normalMap: textureLoader.load('textures/planets/earth/earth_normal.jpg'),
         specularMap: textureLoader.load('textures/planets/earth/earth_specular.jpg'),
-        displacementMap: textureLoader.load('textures/planets/earth/earthbump (2).jpg')
+        displacementMap: textureLoader.load('textures/planets/earth/earthbump.jpg')
     },
     mars: {
         colorMap: textureLoader.load('textures/planets/mars/mars.jpg'),
