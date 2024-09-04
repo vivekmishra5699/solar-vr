@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const earthGeometry = new THREE.SphereGeometry(20, 64, 64);
-    const earthTexture = textureLoader.load('vivekmishra5699/solar-vr/textures/planets/earth/earth.jpg');
-    const earthNormalMap = textureLoader.load('/textures/planets/earth/earth_normal.jpg');
+    const earthTexture = textureLoader.load('solar-vr/textures/planets/earth/earth.jpg');
+    const earthNormalMap = textureLoader.load('/solar-vr/textures/planets/earth/earth_normal.jpg');
     const earthSpecularMap = textureLoader.load('/textures/planets/earth/earth_specular.jpg');
     const earthDisplacementMap = textureLoader.load('/textures/planets/earth/Earth_Bump.jpg');
     const earthMaterial = new THREE.MeshPhongMaterial({
