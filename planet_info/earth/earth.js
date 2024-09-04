@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const earthGeometry = new THREE.SphereGeometry(20, 64, 64);
-    const earthTexture = textureLoader.load('solar-vr/textures/planets/earth/earth.jpg');
+    const earthTexture = textureLoader.load('/solar-vr/textures/planets/earth/earth.jpg');
     const earthNormalMap = textureLoader.load('/solar-vr/textures/planets/earth/earth_normal.jpg');
-    const earthSpecularMap = textureLoader.load('/textures/planets/earth/earth_specular.jpg');
-    const earthDisplacementMap = textureLoader.load('/textures/planets/earth/Earth_Bump.jpg');
+    const earthSpecularMap = textureLoader.load('/solar-vr/textures/planets/earth/earth_specular.jpg');
+    const earthDisplacementMap = textureLoader.load('/solar-vr/textures/planets/earth/Earth_Bump.jpg');
     const earthMaterial = new THREE.MeshPhongMaterial({
         map: earthTexture,
         normalMap: earthNormalMap,
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
 
     const cloudGeometry = new THREE.SphereGeometry(20.2, 64, 64);
-    const cloudTexture = textureLoader.load('/textures/planets/earth/Cloud_Map.jpg');
+    const cloudTexture = textureLoader.load('/solar-vr/textures/planets/earth/Cloud_Map.jpg');
 
     const cloudMaterial = new THREE.MeshPhongMaterial({
         map: cloudTexture,
