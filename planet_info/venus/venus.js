@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     orbit.minDistance = minZoom;
     orbit.maxDistance = maxZoom;
 
-    const ambientLight = new THREE.AmbientLight(0x404040, 1.25); // Soft white light
+    const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft white light
     scene.add(ambientLight);
     
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(5, 5, 15);
     scene.add(directionalLight);
 
