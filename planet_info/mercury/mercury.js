@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const mercuryGeometry = new THREE.SphereGeometry(20, 64, 64); // Increase segments for smoother bumps
-    const mercuryTexture = textureLoader.load('/solar-vr/textures/planets/mercury/Mercury_bump.jpg');
+    const mercuryTexture = textureLoader.load('/solar-vr/textures/planets/mercury/Mercury_Bump.jpg');
     const mercuryNormalMap = textureLoader.load('/solar-vr/textures/planets/mercury/Normal.jpg');
     
     const mercuryMaterial = new THREE.MeshPhongMaterial({
