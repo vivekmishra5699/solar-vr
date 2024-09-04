@@ -139,7 +139,7 @@ function createPlanet(radius, maps, distanceFromSun, orbitalSpeed, name) {
     return planet;
 }
 
-const cloudpic = textureLoader.load('/solar-vr/textures/planets/earth/clouds.png');
+const cloudpic = textureLoader.load('/solar-vr/textures/planets/earth/Cloud_Map.jpg');
 const clouds = new THREE.SphereGeometry(16.1, 32, 64);
 const cloudMaterial = new THREE.MeshStandardMaterial({ map: cloudpic, transparent: true, opacity: 0.98 });
 const earthCloud = new THREE.Mesh(clouds, cloudMaterial);
