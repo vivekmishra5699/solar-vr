@@ -46,7 +46,6 @@ const textures = {
     sun: {
         colorMap: textureLoader.load('/solar-vr/textures/sun/8k_sun.jpg'),
         normalMap: textureLoader.load('textures/planet/mercury/Normal.jpg'),
-
         specularMap: textureLoader.load('/solar-vr/textures/sun/sun_detailed.jpg'),
         displacementMap: textureLoader.load('/solar-vr/textures/sun/sun-alpha-2k.jpg')
     },
