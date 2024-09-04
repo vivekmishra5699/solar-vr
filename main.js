@@ -343,7 +343,7 @@ window.addEventListener('click', onClick, false);
 
 // Function to add stars to the background
 function addStars() {
-    const particles = 20000;
+    const particles = 2000;
 
     const geometry = new THREE.BufferGeometry();
     const positions = [];
@@ -366,34 +366,38 @@ function addStars() {
     geometry.computeBoundingSphere();
 
     const textureLoader = new THREE.TextureLoader();
-    const starTexture = textureLoader.load('/textures/planets/star.png'); 
+    textureLoader.load('/textures/planets/star.png', (starTexture) => {
+        const material = new THREE.PointsMaterial({
+            size: 3,
+            vertexColors: true,
+            map: starTexture,
+            transparent: true,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false
+        });
 
-    const material = new THREE.PointsMaterial({
-        size: 3,
-        vertexColors: true,
-        map: starTexture,
-        transparent: true,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-    });
+        const points = new THREE.Points(geometry, material);
+        scene.add(points);
 
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-
-    // Animate the stars
-    function animateStars() {
-        const time = Date.now() * 0.001;
-        const colorsAttribute = points.geometry.attributes.color;
-        for (let i = 0; i < colorsAttribute.count; i++) {
-            const brightness = 0.5 + 0.5 * Math.sin(time + i);
-            colorsAttribute.setXYZ(i, brightness, brightness, brightness);
+        // Animate the stars
+        function animateStars() {
+            const time = Date.now() * 0.001;
+            const colorsAttribute = points.geometry.attributes.color;
+            for (let i = 0; i < colorsAttribute.count; i++) {
+                const brightness = 0.5 + 0.5 * Math.sin(time + i);
+                colorsAttribute.setXYZ(i, brightness, brightness, brightness);
+            }
+            colorsAttribute.needsUpdate = true;
+            requestAnimationFrame(animateStars);
         }
-        colorsAttribute.needsUpdate = true;
-        requestAnimationFrame(animateStars);
-    }
 
-    animateStars();
+        animateStars();
+    }, undefined, (error) => {
+        console.error('Error loading star texture:', error);
+    });
 }
+
 // Add stars to the scene
 addStars();
+
 export { planets };
