@@ -343,7 +343,7 @@ window.addEventListener('click', onClick, false);
 
 // Function to add stars to the background
 function addStars() {
-    const particles = 2000;
+    const particles = 20000;
 
     const geometry = new THREE.BufferGeometry();
     const positions = [];
