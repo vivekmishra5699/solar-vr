@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const uranusGeometry = new THREE.SphereGeometry(20, 64, 64); // Increase segments for smoother bumps
-    const uranusTexture = textureLoader.load('/textures/planets/uranus/Uranus_Map.jpg');
-    const normalTexture = textureLoader.load('/textures/planets/uranus/Uranus_Normal.jpg');
-    const bumpTexture = textureLoader.load('/textures/planets/uranus/Uranus_Bump.jpg');
+    const uranusTexture = textureLoader.load('/solar-vr/textures/planets/uranus/Uranus_Map.jpg');
+    const normalTexture = textureLoader.load('/solar-vr/textures/planets/uranus/Uranus_Normal.jpg');
+    const bumpTexture = textureLoader.load('/solar-vr/textures/planets/uranus/Uranus_Bump.jpg');
     const uranusMaterial = new THREE.MeshPhongMaterial({
         map: uranusTexture,
         normalTexture:normalTexture,

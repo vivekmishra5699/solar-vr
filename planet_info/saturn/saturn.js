@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const saturnGeometry = new THREE.SphereGeometry(10, 64, 64); // Increase segments for smoother bumps
-    const saturnTexture = textureLoader.load('/textures/planets/saturn/Saturn_Map.jpg');
-    const saturnNormalMap = textureLoader.load('/textures/planets/saturn/Saturn_Normal.jpg');
-    const saturnBumpMap = textureLoader.load('/textures/planets/saturn/Saturn_Bump.jpg');
+    const saturnTexture = textureLoader.load('/solar-vr/textures/planets/saturn/Saturn_Map.jpg');
+    const saturnNormalMap = textureLoader.load('/solar-vr/textures/planets/saturn/Saturn_Normal.jpg');
+    const saturnBumpMap = textureLoader.load('/solar-vr/textures/planets/saturn/Saturn_Bump.jpg');
     const saturnMaterial = new THREE.MeshPhongMaterial({
         map: saturnTexture,
         normalMap: saturnNormalMap,
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return ring;
     }
 
-    const saturnRings = createSaturnRings(13, 25, '/textures/planets/saturn/ring.jpeg', '/textures/planets/saturn/satrun_ring.png');
+    const saturnRings = createSaturnRings(13, 25, '/solar-vr/textures/planets/saturn/ring.jpeg', '/textures/planets/saturn/satrun_ring.png');
     saturnMesh.add(saturnRings);
 
     // Add Saturn ring particles

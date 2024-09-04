@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const neptuneGeometry = new THREE.SphereGeometry(20, 164, 164); // Increase segments for smoother bumps
-    const neptuneTexture = textureLoader.load('/textures/planets/neptune/Neptune.jpg');
-    const normalTexture = textureLoader.load('/textures/planets/neptune/Neptune_Normal.jpg');
-    const bumpTexture = textureLoader.load('/textures/planets/uranus/neptune/Neptune_Bump.jpg');
+    const neptuneTexture = textureLoader.load('/solar-vr/textures/planets/neptune/Neptune.jpg');
+    const normalTexture = textureLoader.load('/solar-vr/textures/planets/neptune/Neptune_Normal.jpg');
+    const bumpTexture = textureLoader.load('/solar-vr/textures/planets/uranus/neptune/Neptune_Bump.jpg');
     
     const neptuneMaterial = new THREE.MeshPhongMaterial({
         map: neptuneTexture,

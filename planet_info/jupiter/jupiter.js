@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const jupiterGeometry = new THREE.SphereGeometry(20, 64, 64); // Increase segments for smoother bumps
-    const jupiterTexture = textureLoader.load('/textures/planets/jupiter/Jupiter_Map.jpg');
-    const jupiterNormalMap = textureLoader.load('/textures/planets/jupiter/Jupiter_Normal.jpg');
-    //const jupiterBumpMap = textureLoader.load('/textures/planets/jupiter/Jupiter_Bump.jpg');
+    const jupiterTexture = textureLoader.load('/solar-vr/textures/planets/jupiter/Jupiter_Map.jpg');
+    const jupiterNormalMap = textureLoader.load('/solar-vr/textures/planets/jupiter/Jupiter_Normal.jpg');
+    //const jupiterBumpMap = textureLoader.load('/solar-vr/textures/planets/jupiter/Jupiter_Bump.jpg');
     
     const jupiterMaterial = new THREE.MeshPhongMaterial({
         map: jupiterTexture,

@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const marsGeometry = new THREE.SphereGeometry(20, 64, 64); // Increase segments for smoother bumps
-    const marsTexture = textureLoader.load('/textures/planets/mars/Mars_Map.jpg');
-    const marsNormalMap = textureLoader.load('/textures/planets/mars/Mars_Normal.jpg');
-    const marsBumpMap = textureLoader.load('/textures/planets/mars/Mars_Bump.jpg');
+    const marsTexture = textureLoader.load('/solar-vr/textures/planets/mars/Mars_Map.jpg');
+    const marsNormalMap = textureLoader.load('/solar-vr/textures/planets/mars/Mars_Normal.jpg');
+    const marsBumpMap = textureLoader.load('/solar-vr/textures/planets/mars/Mars_Bump.jpg');
 
     const marsMaterial = new THREE.MeshPhongMaterial({
         map: marsTexture,

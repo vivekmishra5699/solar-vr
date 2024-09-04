@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const textureLoader = new THREE.TextureLoader();
 
     const venusGeometry = new THREE.SphereGeometry(20, 64, 64); // Increase segments for smoother bumps
-    const venusTexture = textureLoader.load('/textures/planets/venus/Venus_Map.jpg');
-    const venusNormalMap = textureLoader.load('/textures/planets/venus/Venus_Normal.jpg');
+    const venusTexture = textureLoader.load('/solar-vr/textures/planets/venus/Venus_Map.jpg');
+    const venusNormalMap = textureLoader.load('/solar-vr/textures/planets/venus/Venus_Normal.jpg');
     
     const venusMaterial = new THREE.MeshPhongMaterial({
         map: venusTexture,
