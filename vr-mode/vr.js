@@ -45,8 +45,8 @@ scene.add(backgroundMesh);
 const textures = {
     sun: {
         colorMap: textureLoader.load('/solar-vr/textures/sun/8k_sun.jpg'),
-        normalMap: textureLoader.load('/solar-vr/texture/planet/mercury/Normal.jpg'),
-        specularMap: textureLoader.load('/solar-vr/texture/sun/sun_detailed.jpg'),
+        normalMap: textureLoader.load('/solar-vr/textures/planet/mercury/Normal.jpg'),
+        specularMap: textureLoader.load('/solar-vr/textures/sun/sun_detailed.jpg'),
         displacementMap: textureLoader.load('/solar-vr/textures/sun/sun-alpha-2k.jpg')
     },
     mercury: {
@@ -61,7 +61,7 @@ const textures = {
         colorMap: textureLoader.load('/solar-vr/textures/planets/earth/earth.jpg'),//4096 for more clear view
         normalMap: textureLoader.load('/solar-vr/textures/planets/earth/earth_normal.jpg'),
         specularMap: textureLoader.load('/solar-vr/textures/planets/earth/earth_specular.jpg'),
-        displacementMap: textureLoader.load('/solar-vr/textures/planets/earth/earthbump (2).jpg')
+        displacementMap: textureLoader.load('/solar-vr/textures/planets/earth/earthbump.jpg')
     },
     mars: {
         colorMap: textureLoader.load('/solar-vr/textures/planets/mars/mars.jpg'),
@@ -140,7 +140,7 @@ function createPlanet(radius, maps, distanceFromSun, orbitalSpeed, name) {
     return planet;
 }
 
-const cloudpic = textureLoader.load('/textures/planets/earth/clouds.png');
+const cloudpic = textureLoader.load('/solar-vr/textures/planets/earth/clouds.png');
 const clouds = new THREE.SphereGeometry(16.1, 32, 64);
 const cloudMaterial = new THREE.MeshStandardMaterial({ map: cloudpic, transparent: true, opacity: 0.98 });
 const earthCloud = new THREE.Mesh(clouds, cloudMaterial);
