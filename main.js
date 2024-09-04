@@ -366,38 +366,34 @@ function addStars() {
     geometry.computeBoundingSphere();
 
     const textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/textures/planets/star.png', (starTexture) => {
-        const material = new THREE.PointsMaterial({
-            size: 3,
-            vertexColors: true,
-            map: starTexture,
-            transparent: true,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false
-        });
+    const starTexture = textureLoader.load('textures/planets/star.png'); 
 
-        const points = new THREE.Points(geometry, material);
-        scene.add(points);
-
-        // Animate the stars
-        function animateStars() {
-            const time = Date.now() * 0.001;
-            const colorsAttribute = points.geometry.attributes.color;
-            for (let i = 0; i < colorsAttribute.count; i++) {
-                const brightness = 0.5 + 0.5 * Math.sin(time + i);
-                colorsAttribute.setXYZ(i, brightness, brightness, brightness);
-            }
-            colorsAttribute.needsUpdate = true;
-            requestAnimationFrame(animateStars);
-        }
-
-        animateStars();
-    }, undefined, (error) => {
-        console.error('Error loading star texture:', error);
+    const material = new THREE.PointsMaterial({
+        size: 3,
+        vertexColors: true,
+        map: starTexture,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
     });
-}
 
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    // Animate the stars
+    function animateStars() {
+        const time = Date.now() * 0.001;
+        const colorsAttribute = points.geometry.attributes.color;
+        for (let i = 0; i < colorsAttribute.count; i++) {
+            const brightness = 0.5 + 0.5 * Math.sin(time + i);
+            colorsAttribute.setXYZ(i, brightness, brightness, brightness);
+        }
+        colorsAttribute.needsUpdate = true;
+        requestAnimationFrame(animateStars);
+    }
+
+    animateStars();
+}
 // Add stars to the scene
 addStars();
-
 export { planets };
